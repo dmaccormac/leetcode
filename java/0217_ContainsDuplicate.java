@@ -1,9 +1,11 @@
+// https://leetcode.com/problems/contains-duplicate/
+
 package io.github.dmaccormac;
 
 import java.util.HashSet;
 import java.util.Set;
 
-public class Arrays {
+public class Solution {
 
     Set<Integer> set = new HashSet<>();
 
