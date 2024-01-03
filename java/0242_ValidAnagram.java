@@ -12,7 +12,7 @@ public class Solution {
         if (s.length() != t.length())
             return false;
 
-        // approach 1 - sorting
+        // Approach #1: Sorting. Time complexity: O(n log n)
         // char[] sChars = s.toCharArray();
         // char[] tChars = t.toCharArray();
 
@@ -21,22 +21,37 @@ public class Solution {
 
         // return (Arrays.equals(sChars, tChars));
 
-        // appraoch 2 - hashmaps
-        Map<Character, Integer> sMap = new HashMap<>();
-        Map<Character, Integer> tMap = new HashMap<>();
+        // Appraoch #2 - Hashmaps. Time complexity O(n)
+        // Map<Character, Integer> sMap = new HashMap<>();
+        // Map<Character, Integer> tMap = new HashMap<>();
 
-        for (char ch : s.toCharArray()) {
-            var count = (sMap.containsKey(ch)) ? sMap.get(ch) + 1 : 1;
-            sMap.put(ch, count);
+        // for (char ch : s.toCharArray()) {
+        // var count = (sMap.getOrDefault(ch, 0) + 1);
+        // sMap.put(ch, count);
 
-        }
-        for (char ch : t.toCharArray()) {
-            var count = (tMap.containsKey(ch)) ? tMap.get(ch) + 1 : 1;
-            tMap.put(ch, count);
+        // }
+        // for (char ch : t.toCharArray()) {
+        // var count = (tMap.getOrDefault(ch, 0) + 1);
+        // tMap.put(ch, count);
 
-        }
+        // }
 
-        return sMap.equals(tMap);
+        // return sMap.equals(tMap);
+
+        // Approach #3: Single hashmap. Time complexity O(n)
+        Map<Character, Integer> map = new HashMap<>();
+
+        for (char ch : s.toCharArray())
+            map.put(ch, map.getOrDefault(ch, 0) + 1);
+
+        for (char ch : t.toCharArray())
+            map.put(ch, map.getOrDefault(ch, 0) - 1);
+
+        for (var item : map.entrySet())
+            if (item.getValue() != 0)
+                return false;
+
+        return true;
 
     }
 }
