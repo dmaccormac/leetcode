@@ -7,10 +7,10 @@ import java.util.Set;
 
 public class Solution {
 
-    Set<Integer> set = new HashSet<>();
-
     public boolean ContainsDuplicate(int[] items) {
-        set.clear();
+
+        // Approach #1: Hashset. Time complexity O(n)
+        Set<Integer> set = new HashSet<>();
         for (int i : items) {
             if (set.contains(i))
                 return true;
