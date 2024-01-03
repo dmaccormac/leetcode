@@ -1,17 +1,16 @@
 package io.github.dmaccormac;
 
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String args[]) {
 
         Solution solution = new Solution();
-        String s = "moon";
-        String t = "mono";
+        int[] numbers = new int[] { 2, 7, 11, 15 };
 
-        System.out.println(solution.isAnagram(s, t));
-
-        t += "x";
-        System.out.println(solution.isAnagram(s, t));
+        var result = solution.twoSum(numbers, 9);
+        System.out.println(Arrays.toString(result));
 
     }
 
