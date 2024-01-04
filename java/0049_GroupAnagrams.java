@@ -34,7 +34,7 @@ public class Solution {
 
         for (var word : strs) {
             // map frequency of chars in each word to int array
-            // example, "acdc" -> [1, 0, 2, 1, 1, 0, ... 0] //length 26
+            // example, "acdc" -> [1, 0, 2, 1, 0, 0, ... 0] //length 26
             int[] count = new int[26];
             for (char ch : word.toCharArray())
                 count[ch - 'a'] += 1;
