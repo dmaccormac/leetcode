@@ -13,17 +13,36 @@ public class Solution {
     public List<List<String>> groupAnagrams(String[] strs) {
 
         // Approach #1: Sort words and store in hashmap.
-        // Time complexity n*(Klogk) where k is average length of string
-        Map<String, ArrayList<String>> map = new HashMap<>();
+        // Time complexity m*(n log n) m = strs len / n = avg. str. len
+        // Map<String, ArrayList<String>> map = new HashMap<>();
+
+        // for (var word : strs) {
+        // var chars = word.toCharArray();
+        // Arrays.sort(chars);
+        // var sortedWord = new String(chars);
+
+        // map.putIfAbsent(sortedWord, new ArrayList<String>());
+        // map.get(sortedWord).add(word);
+
+        // }
+
+        // return new ArrayList<>(map.values());
+
+        // Approach #2: Count chars + hash map.
+        // Time complexity O(m*n)
+        Map<Integer, List<String>> map = new HashMap<>();
 
         for (var word : strs) {
-            var chars = word.toCharArray();
-            Arrays.sort(chars);
-            var sortedWord = new String(chars);
+            // map frequency of chars in each word to int array
+            // example, "acdc" -> [1, 0, 2, 1, 1, 0, ... 0] //length 26
+            int[] count = new int[26];
+            for (char ch : word.toCharArray())
+                count[ch - 'a'] += 1;
 
-            map.putIfAbsent(sortedWord, new ArrayList<String>());
-            map.get(sortedWord).add(word);
-
+            // hash the count array and use as key
+            var key = Arrays.toString(count).hashCode();
+            map.putIfAbsent(key, new ArrayList<>());
+            map.get(key).add(word);
         }
 
         return new ArrayList<>(map.values());
