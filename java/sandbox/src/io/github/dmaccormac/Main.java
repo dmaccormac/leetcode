@@ -1,16 +1,13 @@
 package io.github.dmaccormac;
 
-import java.util.Arrays;
-
 public class Main {
 
     public static void main(String args[]) {
 
         Solution solution = new Solution();
-        int[] numbers = new int[] { 2, 7, 11, 15 };
-
-        var result = solution.twoSum(numbers, 9);
-        System.out.println(Arrays.toString(result));
+        String[] strs = { "eat", "tea", "tan", "ate", "nat", "bat" };
+        var result = solution.groupAnagrams(strs);
+        System.out.println(result);
 
     }
 
