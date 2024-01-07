@@ -1,13 +1,16 @@
 package io.github.dmaccormac;
 
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String args[]) {
 
-        var nums = new int[] { 0, 1, 0, 3, 12 };
+        int[] nums = new int[] { 1, 2, 1 };
 
         Solution solution = new Solution();
-        solution.moveZeroes(nums);
+        var ans = solution.getConcatenation(nums);
+        System.out.println(Arrays.toString(ans));
 
     }
 
