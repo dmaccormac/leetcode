@@ -24,8 +24,8 @@ A word is a maximal substring consisting of non-space characters only.
 
 ### Constraints:
 
-> 1 <= s.length <= 104
-> s consists of only English letters and spaces ' '.
-> There will be at least one word in s.
+    1 <= s.length <= 104
+    s consists of only English letters and spaces ' '.
+    There will be at least one word in s.
 
 https://leetcode.com/problems/length-of-last-word/
