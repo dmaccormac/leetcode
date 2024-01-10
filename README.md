@@ -1,4 +1,3 @@
-## main branch
+## leetcode-java
 
-leetcode java boilerplate
 see branches for solutions
