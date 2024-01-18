@@ -5,8 +5,7 @@ import java.util.Arrays;
 // slow and fast pointer approach:
 
 // iterate through array using fast pointer.
-// if the current element is non zero, copy it to the slow pointer index
-// and then increment the slow pointer.
+// if the current element is non zero, copy it to the slow pointer index and increment the slow pointer.
 // set all elements from slow pointer index to end of array equal to zero.
 
 // Time complexity: O(n)
