@@ -3,12 +3,21 @@ package io.github.dmaccormac;
 import java.util.HashMap;
 import java.util.Map;
 
-// HashsMap solution
+// Approach: 2 HashMaps
 
-// Create HashMap for each word
-// Count character frequency in each word and store in corresponding HashMap
-// At each iteration, compare current value (char count) in both HashMaps
-// Return false if char count is not equal, otherwise return true
+// Count character frequency in each word and store in corresponding HashMaps.
+// Then for each key in both maps, compare values:
+// If all values are equal it means the words are isomorphic.
+
+// example true
+// egg  ... add
+// [e :1] ... [a: 1]
+// [g: 2] ... [d: 2]
+
+// example false
+// ege  ... add
+// [e: 2] ... [a: 1]
+// [g: 1] ... [d: 2]
 
 // Time complexity: O(n)
 
@@ -23,13 +32,15 @@ class Solution {
         Map<Character, Integer> tMap = new HashMap<>();
 
         for (int i = 0; i < s.length(); i++) {
-            if (sMap.get(s.charAt(i)) != tMap.get(t.charAt(i)))
-                return false;
 
             sMap.put(s.charAt(i), sMap.getOrDefault(s.charAt(i), 0) + 1);
             tMap.put(t.charAt(i), tMap.getOrDefault(t.charAt(i), 0) + 1);
 
         }
+
+        for (int i = 0; i < s.length(); i++)
+            if (sMap.get(s.charAt(i)) != tMap.get(t.charAt(i)))
+                return false;
 
         return true;
     }
