@@ -1,4 +1,4 @@
-#include "../include/Solution.h"
+#include "Solution.h"
 #include <iostream>
 #include <vector>
 using namespace dmaccormac;
