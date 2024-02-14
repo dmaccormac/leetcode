@@ -2,7 +2,7 @@
 
 // Use a char array to count the frequency of chars in each word
 // Example: "acdc" -> [1, 0, 2, 1, 0, 0, ... 0]
-// Use this a dict key and to identify anagrams and group them together
+// Use this as dict key and to identify anagrams and group them together
 
 // time: O(N*K), where N is the length of strs, and K is the maximum length of a string in strs
 // space: O(N*K), the total information content stored in dict
